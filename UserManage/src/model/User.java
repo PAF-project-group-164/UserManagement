@@ -13,7 +13,7 @@ public class User {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			// Provide the correct details: DBServer/DBName, username, password
+			// Provide the correct details: DBServer/DBName, username, password..
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/user_records?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
 					"root", "");
