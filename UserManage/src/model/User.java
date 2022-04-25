@@ -100,27 +100,26 @@ public class User {
 		return output;
 	}
 
-	
-	public String updateUser(String UserID, String U_Fname,String U_Lname,String Uemail,String Uaddress,String U_NIC,String U_gender,String U_DoB) {
+
+	public String updateUser(String UserID, String U_Fname, String U_Lname, String Uemail, String Uaddress, String U_NIC, String U_gender ,String U_DoB ) {
 		String output = "";
 
 		try {
 			Connection con = connect();
 
 			if (con == null) {
-				return "Error while connecting to the database for updating!";
+				return "Error while connecting to the database for updating.";
 			}
 
 			// create a prepared statement
 			String query = "UPDATE user SET U_Fname=?,U_Lname=?,Uemail=?,Uaddress=?,U_NIC=?,U_gender=?,U_DoB=? WHERE UserID=?";
-
+			
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
 			// binding values
-
 			preparedStmt.setString(1, U_Fname);
 			preparedStmt.setString(2, U_Lname);
-			preparedStmt.setString(3, Uemail);
+			preparedStmt.setString(3, Uaddress);
 			preparedStmt.setString(4, Uaddress);
 			preparedStmt.setString(5, U_NIC);
 			preparedStmt.setString(6, U_gender);
@@ -131,9 +130,9 @@ public class User {
 			preparedStmt.execute();
 			con.close();
 
-			output = "User Updated successfully!";
+			output = "Updated successfully";
 		} catch (Exception e) {
-			output = "Error while updating!";
+			output = "Error while updating the user.";
 			System.err.println(e.getMessage());
 		}
 
