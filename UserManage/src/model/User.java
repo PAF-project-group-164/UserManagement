@@ -116,7 +116,7 @@ public class User {
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
-			// binding values
+			// binding values.
 			preparedStmt.setString(1, U_Fname);
 			preparedStmt.setString(2, U_Lname);
 			preparedStmt.setString(3, Uaddress);
